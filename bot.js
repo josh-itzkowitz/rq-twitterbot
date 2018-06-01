@@ -13,7 +13,7 @@ var config = require('./config');
 //declare new Twit object using keys stored in config
 var T = new Twit(config);
 
-setInterval(createTweet,1000 * 60 * 60);
+setInterval(createTweet,1000 * 60 * 60 * 12);
 
 createTweet();
 
@@ -33,7 +33,7 @@ function createTweet(){
 		author = jsonData.quoteAuthor;
 		//case when author is empty string
 		if(author === '')
-			author = 'unknown'
+			author = 'Unknown'
 		//params object containing tweet to be posted
 		var params = {
 		status: quote + '\n-' + author
